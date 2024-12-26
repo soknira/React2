@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franando Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropbtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links .dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    white-space: nowrap;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-icons .cart-count {
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+.login-btn {
+    background: black;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f9f9f9;
+    padding: 50px 20px;
+}
+
+.promo-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.promo-text p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.promo-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+</style>
+<body>
+    <header class="navbar">
+        <div class="logo">FRANANDO</div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Shop</button>
+                <div class="dropdown-content">
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">Sale</a>
+                </div>
+            </div>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="nav-icons">
+            <i class="search-icon">🔍</i>
+            <i class="notification-icon">🔔</i>
+            <i class="wishlist-icon">❤️</i>
+            <i class="cart-icon">🛒</i>
+            <span class="cart-count">10</span>
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="promo-text">
+            <h1>Mid Year Promotion</h1>
+            <p>All items discount up to 75</p>
+        </div>
+        <div class="promo-image">
+            <img src="your-image-path.jpg" alt="Promotion">
+        </div>
+    </section>
+</body>
+</html>

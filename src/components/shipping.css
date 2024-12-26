@@ -1,0 +1,122 @@
+/* General container styling */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Shipping Information Form */
+  .shipping-info-section {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shipping-info-section h4 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .shipping-info-section label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .shipping-info-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .shipping-info-section input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .shipping-info-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .shipping-info-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Payment Method Section */
+  .payment-method-section {
+    margin-top: 40px;
+  }
+  
+  .payment-method-section h4 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .payment-method-section label {
+    font-size: 16px;
+    color: #555;
+    margin-right: 15px;
+  }
+  
+  .payment-method-section input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .payment-method-section .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  /* Subtotal and Checkout */
+  .cart-totals-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-totals-section .flex-w {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .cart-totals-section .mtext-110 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .cart-totals-section .btn-primary {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cart-totals-section .btn-primary:hover {
+    background-color: #218838;
+  }
+  
