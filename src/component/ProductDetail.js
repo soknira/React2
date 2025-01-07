@@ -1,5 +1,3 @@
-
-
 // 	<section className="sec-product-detail bg0 p-t-65 p-b-60">
 // 		<div className="container">
 // 			<div className="row">
@@ -43,7 +41,7 @@
 // 						</div>
 // 					</div>
 // 				</div>
-					
+
 // 				<div className="col-md-6 col-lg-5 p-b-30">
 // 					<div className="p-r-50 p-t-5 p-lr-0-lg">
 // 						<h4 className="mtext-105 cl2 js-name-detail p-b-14">
@@ -57,7 +55,7 @@
 // 						<p className="stext-102 cl3 p-t-23">
 // 							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
 // 						</p>
-						
+
 // 						<div className="p-t-33">
 // 							<div className="flex-w flex-r-m p-b-10">
 // 								<div className="size-203 flex-c-m respon6">
@@ -115,7 +113,7 @@
 // 										Add to cart
 // 									</button>
 // 								</div>
-// 							</div>	
+// 							</div>
 // 						</div>
 
 // 						<div className="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -253,7 +251,7 @@
 // 												</p>
 // 											</div>
 // 										</div>
-										
+
 // 										<form className="w-full">
 // 											<h5 className="mtext-108 cl2 p-b-7">
 // 												Add a review
@@ -305,7 +303,7 @@
 // 						</div>
 // 					</div>
 // 				</div>
-// 			</div> 
+// 			</div>
 // 		</div>
 
 // 		 <div className="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
@@ -316,7 +314,7 @@
 // 			<span className="stext-107 cl6 p-lr-25">
 // 				Categories: Jacket, Men
 // 			</span>
-// 		</div> 
+// 		</div>
 // 	</section>
 
 //  <section className="sec-relate-product bg0 p-t-45 p-b-105">
@@ -497,7 +495,7 @@
 // 							<div className="block2-txt flex-w flex-t p-t-14">
 // 								<div className="block2-txt-child1 flex-col-l ">
 // 									<a href="product-detail.html" className="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-// 										Vintage Inspired Classic 
+// 										Vintage Inspired Classic
 // 									</a>
 
 // 									<span className="stext-105 cl3">
@@ -578,22 +576,19 @@
 // 				</div>
 // 			</div>
 // 		</div>
-// 	</section> 
+// 	</section>
 //   </>
 //   );
 // };
 
 // export default ProductDetail;
 
-
-
-
-import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import axios from "axios";
 
 const ProductDetail = () => {
-  const { productId } = useParams(); 
+  const { productId } = useParams();
   const history = useHistory();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -621,7 +616,9 @@ const ProductDetail = () => {
 
   const addToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === product.id
+    );
 
     if (existingProductIndex >= 0) {
       cart[existingProductIndex].quantity += 1;
@@ -640,22 +637,140 @@ const ProductDetail = () => {
   if (error) {
     return <div className="text-center mt-5 text-danger">{error}</div>;
   }
+  
 
   return (
+
     <div className="container">
+          <style>
+            {`   
+            /* Cute and clean styles for the product detail page */
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-details {
+  background-color: #fff5f7;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Flexbox for image and details alignment */
+.product-content {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between;
+}
+
+.product-image {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  flex: 2;
+}
+
+.product-info h2 {
+  color: #ff5f7e;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.product-info p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.product-info p.price {
+  font-size: 1.5rem;
+  color: #ff5f7e;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #ff5f7e;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #ff7590;
+  box-shadow: 0 5px 15px rgba(255, 95, 126, 0.4);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .product-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .product-info p {
+    font-size: 1.1rem;
+  }
+
+  .product-info p.price {
+    font-size: 1.4rem;
+  }
+}
+
+        `}
+    </style>
       <div className="product-details">
-        <h2>{product.title}</h2>
-        <img src={product.image} alt={product.title} style={{ maxWidth: '300px' }} />
-        <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
-        <button onClick={addToCart} className="btn btn-primary">
-          Add to Cart
-        </button>
+        <div className="product-content">
+          {/* Product Image Section */}
+          <div className="product-image">
+            <img src={product.image} alt={product.title} />
+          </div>
+
+          {/* Product Info Section */}
+          <div className="product-info">
+            <h2>{product.title}</h2>
+            <p>{product.description}</p>
+            <p className="price">Price: ${product.price}</p>
+            <button onClick={addToCart} className="btn btn-primary">
+              Add to Cart
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default ProductDetail;
-
-
